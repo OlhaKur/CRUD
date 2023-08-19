@@ -1,0 +1,42 @@
+.card {
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  gap: 32px;
+}
+.card__title {
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+}
+.card__title-blue {
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  color: blue;
+}
+.card__content {
+  display: grid;
+  gap: 24px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+}
+.card__button-prime {
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 20px;
+  background-color: blue;
+  color: white;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/*# sourceMappingURL=style.css.map */
