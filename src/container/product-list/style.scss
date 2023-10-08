@@ -1,8 +1,10 @@
 @use '../../lib/service.scss' as s;
+@use '../../component/button/style.scss' as button;
 
 .card {
   display: flex;
   padding: s.space(4);
+
   flex-direction: column;
   gap: s.space(8);
 
@@ -30,13 +32,13 @@
     border-radius: 20px;
   }
 
-  &__button-prime {
-    border: 1px solid s.color('light');
-    padding: s.space(2);
-    border-radius: 20px;
-    background-color: blue;
-    color: white;
-  }
+  // &__button-prime {
+  //   border: 1px solid s.color('light');
+  //   padding: s.space(2);
+  //   border-radius: 20px;
+  //   background-color: blue;
+  //   color: white;
+  // }
 }
 
 .main {

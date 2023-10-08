@@ -1,12 +1,32 @@
-.container {
+.card {
+  margin: 40px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 40px;
+  padding: 20px;
+  border: 1px solid gray;
+  border-radius: 8px;
 }
 
-.btn {
+.card__title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card__subtitle {
+  font-size: 16px;
+  margin-top: 16px;
+}
+
+.card__button {
+  display: flex;
+  justify-content: center;
+  max-width: 300px;
   background-color: blue;
   color: white;
+  padding: 16px;
+  border-radius: 8px;
 }
 
 /*# sourceMappingURL=style.css.map */
