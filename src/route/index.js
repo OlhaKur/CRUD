@@ -112,8 +112,14 @@ class Playlist {
 
   deleteTrackById(trackId) {
     this.tracks = this.tracks.filter(
-      (track) => track.id !== trackId,
+      (tracks) => tracks.id !== trackId,
     )
+  }
+
+  static addTrack(name) {
+    const newTrack = new Track(name)
+    this.#list.push(newTrack)
+    return newTrack
   }
 
   static findListByValue(name) {
@@ -146,7 +152,7 @@ router.get('/', function (req, res) {
   // ↑↑ сюди вводимо JSON дані
 })
 
-// ========================================================
+// ================================================================================================================
 // router.get Створює нам один ентпоїнт
 
 // ↙️ тут вводимо шлях (PATH) до сторінки
@@ -213,7 +219,9 @@ router.post('/spotify-create', function (req, res) {
   // })
   // ↑↑ сюди вводимо JSON дані
 })
-// ===================================================
+
+// ========================================================================================================================
+
 router.get('/spotify-playlist', function (req, res) {
   const id = Number(req.query.id)
 
@@ -245,7 +253,9 @@ router.get('/spotify-playlist', function (req, res) {
 
   // ↑↑ сюди вводимо JSON дані
 })
-// ========================================================
+
+// ==========================================================================================================================
+
 router.get('/spotify-track-delete', function (req, res) {
   const playlistId = Number(req.query.playlistId)
   const trackId = Number(req.query.trackId)
@@ -279,24 +289,32 @@ router.get('/spotify-track-delete', function (req, res) {
 
   // ↑↑ сюди вводимо JSON дані
 })
-// ==================================
+
+// ============================================================================================
+
 router.get('/spotify-playlist-add', function (req, res) {
-  const id = Number(req.query.id)
-
-  const playlist = Playlist.getById(id)
+  const playlistId = Number(req.query.playlistId)
+  const trackId = Number(req.query.trackId)
+  const playlist = Playlist.getById(playlistId)
   // res.render генерує нам HTML сторінку
-  // if (!playlist) {
-  //   return res.render('alert', {
-  //     // вказуємо назву папки контейнера, в якій знаходяться наші стилі
-  //     style: 'alert',
+  if (!playlist) {
+    return res.render('alert', {
+      // вказуємо назву папки контейнера, в якій знаходяться наші стилі
+      style: 'alert',
 
-  //     data: {
-  //       message: 'Помилка',
-  //       info: 'Такого плейлиста не знайдено',
-  //       link: '/',
-  //     },
-  //   })
-  // }
+      data: {
+        message: 'Помилка',
+        info: 'Такого плейлиста не знайдено',
+        link: `/spotify-playlist?id=${playlistId}`,
+      },
+    })
+  }
+
+  if (trackId) {
+    Playlist.addTrack(playlist)
+  }
+  console.log(playlist)
+
   res.render('spotify-playlist-add', {
     // вказуємо назву папки контейнера, в якій знаходяться наші стилі
     style: 'spotify-playlist-add',
@@ -311,10 +329,8 @@ router.get('/spotify-playlist-add', function (req, res) {
 
   // ↑↑ сюди вводимо JSON дані
 })
-// ==================================
 
-// Підключаємо роутер до бек-енду
-module.exports = router
+// =====================================================================================================================
 
 router.get('/spotify-search', function (req, res) {
   const value = ''
@@ -357,3 +373,6 @@ router.post('/spotify-search', function (req, res) {
     },
   })
 })
+
+// Підключаємо роутер до бек-енду
+module.exports = router
