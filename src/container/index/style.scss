@@ -9,7 +9,7 @@
   &__title {
     font-size: 18px;
     font-weight: bold;
-    border-bottom: 1px solid s.color('light');
+    border-bottom: 1px solid s.color('border');
     margin-bottom: s.space(2);
     padding-bottom: s.space(1);
   }
@@ -17,10 +17,10 @@
   &__title-blue {
     font-size: 18px;
     font-weight: bold;
-    border-bottom: 1px solid s.color('light');
+    border-bottom: 1px solid s.color('border');
     margin-bottom: s.space(2);
     padding-bottom: s.space(1);
-    color: blue;
+    color: s.color('main');
   }
 
   &__content {
@@ -45,20 +45,22 @@
   }
 
   &__input {
-    border: 1px solid s.color('light');
+    border: 1px solid s.color('border');
     padding: s.space(2);
   }
 
   &__button {
-    border: 1px solid s.color('light');
+    border: 1px solid s.color('border');
     padding: s.space(2);
-    border-radius: 20px;
+    border-radius: 16px;
+    background-color: s.color('main');
+    color: white;
   }
   &__button-primary {
-    border: 1px solid s.color('light');
+    border: 1px solid s.color('border');
     padding: s.space(2);
     border-radius: 20px;
-    background-color: blue;
+    background-color: s.color('primary');
     color: white;
     display: flex;
     justify-self: center;

@@ -7,17 +7,17 @@
 .form__title {
   font-size: 18px;
   font-weight: bold;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgb(183, 182, 182);
   margin-bottom: 8px;
   padding-bottom: 4px;
 }
 .form__title-blue {
   font-size: 18px;
   font-weight: bold;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgb(183, 182, 182);
   margin-bottom: 8px;
   padding-bottom: 4px;
-  color: blue;
+  color: rgb(13, 65, 221);
 }
 .form__content {
   display: grid;
@@ -37,19 +37,21 @@
   font-size: 14px;
 }
 .form__input {
-  border: 1px solid #ddd;
+  border: 1px solid rgb(183, 182, 182);
   padding: 8px;
 }
 .form__button {
-  border: 1px solid #ddd;
+  border: 1px solid rgb(183, 182, 182);
   padding: 8px;
-  border-radius: 20px;
+  border-radius: 16px;
+  background-color: rgb(13, 65, 221);
+  color: white;
 }
 .form__button-primary {
-  border: 1px solid #ddd;
+  border: 1px solid rgb(183, 182, 182);
   padding: 8px;
   border-radius: 20px;
-  background-color: blue;
+  background-color: orange;
   color: white;
   display: flex;
   justify-self: center;
